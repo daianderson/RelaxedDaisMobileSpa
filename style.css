@@ -1,20 +1,18 @@
-DOCTYPE 
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
+
+
+
+
+/* The flip box container  */
 
 .flip-box {
-  background-color: transparent;
+  background-color: #8c765a;
   width: 300px;
   height: 200px;
-  border: 1px solid #f1f1f1;
-  perspective: 1000px;
+  border: 1px solid #8C756A;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
 
+/* This container is needed to position the front and back side */
 .flip-box-inner {
   position: relative;
   width: 100%;
@@ -24,45 +22,30 @@ body {
   transform-style: preserve-3d;
 }
 
+/* Do an horizontal flip when you move the mouse over the flip box container */
 .flip-box:hover .flip-box-inner {
   transform: rotateY(180deg);
 }
 
+/* Position the front and back side */
 .flip-box-front, .flip-box-back {
   position: absolute;
   width: 100%;
   height: 100%;
-  -webkit-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden; 
   backface-visibility: hidden;
 }
 
+/* Style the front side (fallback if image is missing) */
 .flip-box-front {
-  background-color: #bbb;
+  background-color:#0292B7;
   color: black;
 }
 
+/* Style the back side */
 .flip-box-back {
-  background-color: #555;
-  color: white;
+  background-color: #0292B7;
+  color:black;
   transform: rotateY(180deg);
 }
-</style>
-</head>
-<body>
-
-
-<div class="flip-box">
-  <div class="flip-box-inner">
-    <div class="flip-box-front">
-      <img src="https://user-images.githubusercontent.com/70557720/99126851-f6de7280-25d4-11eb-941d-f4704c0a15ca.jpg"style='max-width:100%'" style="width:300px;height:200px">
-    </div>
-    <div class="flip-box-back">
-      <h2>Paris</h2>
-      <p>What an amazing city</p>
-    </div>
-  </div>
-</div>
-
-</body>
-</html>
 
